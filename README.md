@@ -1,15 +1,16 @@
 # Desafio de Geocodificação - LACEDA (CNEFE Bahia)
 
-# Objetivo
-Relacionar a base busca com o setor censitário do IBGE a que cada um pertence, utilizando os dados do CNEFE Bahia.
+## Objetivo
+Adicionar o código do setor censitário do IBGE a cada um dos 107 endereços da base de dados, estabelecendo a relação entre a tabela `base_busca` e a tabela `cnefe_bahia`.
 
-# Solução
-1. **Padronização dos nomes:** Optei por mudar o nome de todas as colunas para letras minúsculas, para facilitar a leitura e evitar ter que escrever com aspas no SQL.
-2. **Criação das tabelas e importação:** Defini o tipo de dado de todas as colunas como `TEXT` para evitar problemas com símbolos, traços ou formatação dos CEPs ao importar os dados.
-3. **Cruzamento dos dados:** Usei o CEP para ligar a minha lista à tabela do IBGE. Quando o banco encontrava o mesmo CEP nas duas tabelas, ele trazia o valor que estava guardado na coluna de setor censitário do IBGE e adicionava ao meu resultado.
-4. **Resultado limpo:** Usei o comando `DISTINCT ON` para garantir que o resultado final ficasse com exatamente as mesmas 107 linhas da base original, sem repetir registros.
+##  Desenvolvimento
+Baixei as bases de dados disponibilizadas e abri os arquivos no Visual Studio para ver como era a estrutura da tabela e qual era o nome de cada coluna antes de criar o banco de dados.
 
-# Arquivos do repositório
-- `resultado_final.csv`: Tabela final com os endereços e a nova coluna com o código do setor censitário.
-- `geocodificacao.sql`: Código SQL com a criação das tabelas e a pesquisa realizada.
-- `README.md`: Esta explicação do projeto.
+Tive dificuldade ao popular as tabelas devido ao formato dos dados, para evitar erros criei todas as colunas no formato `TEXT`.
+Optei por mudar o nome de todas as colunas para letras minúsculas, para facilitar a leitura e evitar ter que escrever com aspas no SQL.
+Com as duas tabelas populadas e padronizadas no banco, passei para a etapa de identificar qual era o setor censitário de cada endereço:
+Realizei um `LEFT JOIN` entre a `base_busca` e a `cnefe_bahia` utilizando a coluna de **CEP** como chave de ligação. Quando o banco encontrava o CEP correspondente na `cnefe_bahia`, ele pegava o valor da coluna **`cod_setor`** (onde o IBGE guarda o código do setor censitário) e adicionava essa informação como uma nova coluna ao lado do endereço da `base_busca`. Utilizei o comando `DISTINCT ON` para não repetir registros.
+
+## Arquivos do Repositório
+- `resultado_final.csv`: Tabela final com os endereços e a nova coluna contendo o código do setor censitário.
+- `geocodificacao.sql`: Código SQL com a criação das tabelas, ajustes e a pesquisa de cruzamento.
