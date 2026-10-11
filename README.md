@@ -1,9 +1,9 @@
 # Desafio de Geocodificação - LACEDA (CNEFE Bahia)
 
-## Objetivo
-Adicionar o código do setor censitário do IBGE a cada um dos 107 endereços da base de dados, estabelecendo a relação entre a tabela `base_busca` e a tabela `cnefe_bahia`.
+# Objetivo
+Adicionar o código do setor censitário do IBGE, estabelecendo a relação entre a tabela `base_busca` e a tabela `cnefe_bahia`.
 
-##  Desenvolvimento
+#  Desenvolvimento
 Baixei as bases de dados disponibilizadas e abri os arquivos no Visual Studio para ver como era a estrutura da tabela e qual era o nome de cada coluna antes de criar o banco de dados.
 
 Tive dificuldade ao popular as tabelas devido ao formato dos dados, para evitar erros criei todas as colunas no formato `TEXT`.
