@@ -1,34 +1,35 @@
 
-CREATE TABLE  base_busca (
-    consulta_logradouro TEXT,
-    consulta_numero TEXT,
-    consulta_bairro TEXT,
-    consulta_cep TEXT,
-    consulta_complemento TEXT,
-    consulta_municipio TEXT
+CREATE TABLE base_busca (
+    consulta_logradouro VARCHAR(150),
+    consulta_numero VARCHAR(20),
+    consulta_bairro VARCHAR(150),
+    consulta_cep VARCHAR(20),
+    consulta_complemento VARCHAR(150),
+    consulta_municipio VARCHAR(150)
 );
 
-CREATE TABLE  cnefe_bahia (
-    cod_uf TEXT,
-    cod_municipo TEXT,
-    cod_distrito TEXT,
-    cod_subdistrito TEXT,
-    cod_setor TEXT,
-    num_quadra TEXT,
-    num_face TEXT,
-    cep TEXT,
-    nom_secgeo TEXT,
-    nom_tipo_secgeo TEXT,
-    nom_titulo_secgeo TEXT,
-    nom_logradouro TEXT,
-    num_endereco TEXT,
-    dsc_estabelecimento TEXT,
-    cod_especie TEXT,
-    nv_rod_estr TEXT,
-    nv_km TEXT,
-    nv_segm TEXT,
-    nv_lote TEXT,
-    nv_complemento TEXT
+
+CREATE TABLE cnefe_bahia (
+    cod_uf VARCHAR(20),
+    cod_municipo VARCHAR(20),
+    cod_distrito VARCHAR(20),
+    cod_subdistrito VARCHAR(20),
+    cod_setor VARCHAR(20),
+    num_quadra VARCHAR(20),
+    num_face VARCHAR(20),
+    cep VARCHAR(20),
+    nom_secgeo VARCHAR(150),
+    nom_tipo_secgeo VARCHAR(150),
+    nom_titulo_secgeo VARCHAR(150),
+    nom_logradouro VARCHAR(150),
+    num_endereco VARCHAR(20),
+    dsc_estabelecimento VARCHAR(150),
+    cod_especie VARCHAR(20),
+    nv_rod_estr VARCHAR(150),
+    nv_km VARCHAR(20),
+    nv_segm VARCHAR(20),
+    nv_lote VARCHAR(20),
+    nv_complemento VARCHAR(150)
 );
 
 
